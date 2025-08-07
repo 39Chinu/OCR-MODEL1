@@ -1,0 +1,5 @@
+Answer the user query based on following context. User query = What is residual prophet inequality?
+Context:
+Context # 1 - # Residual Prophet Inequalities
+Context # 2 - ](#page-28-7) [\(2010b\)](#page-28-7) and [Hajiaghayi et al.](#page-29-13) [\(2007b\)](#page-29-13) that every prophet-type inequality implies a corresponding approximation guarantee in a PPM, and the converse is true as well [\(Correa et al.,](#page-28-1) [2019\)](#page-28-1).
+Context # 3 - The prophet inequality problem, as introduced by [Krengel and Sucheston](#page-29-0) [\(1977\)](#page-29-0), was resolved by using a dynamic program that gave a tight approximation ratio of 1/2. [Samuel-Cahn](#page-30-0) [\(1984\)](#page-30-0) later proved that a single-threshold strategy yields the same guarantee; this also showed that the order in which the variables are observed is immaterial.
