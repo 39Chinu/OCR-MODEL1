@@ -1,4 +1,4 @@
-#  PDF-RAG Pipeline
+# OCR-MODEL
 
 A complete pipeline for building a **Retrieval-Augmented Generation (RAG)** system using PDFs as input. This project uses `marker-pdf` for accurate text extraction with layout awareness, `numpy` for data handling, and LLMs for intelligent question-answering.
 
