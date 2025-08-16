@@ -1,0 +1,30 @@
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+#  context
+retrieved_contexts = [
+    "# Residual Prophet Inequalities",
+    "every prophet-type inequality implies a corresponding approximation guarantee in a PPM, and the converse is true as well.",
+    "The prophet inequality problem ... yields the same guarantee; the order in which variables are observed is immaterial."
+]
+
+query = "What is residual prophet inequality?"
+
+model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+    device_map="auto"
+)
+
+prompt = (
+    f"Answer the question based only on the given context.\n\n"
+    f"Context:\n{retrieved_contexts}\n\n"
+    f"Question: {query}\nAnswer:"
+)
+
+inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+outputs = model.generate(**inputs, max_new_tokens=150)
+
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
